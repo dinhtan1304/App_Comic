@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    tools:context=".activities.ChapActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="230dp">
+        <ImageView
+            android:id="@+id/comicImages"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/voluyendinhphong"
+            android:scaleType="centerCrop"/>
+        <TextView
+            android:id="@+id/tvComicNames"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#B4000000"
+            android:text="Ten Truyen"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:textSize="35dp"
+            android:padding="5dp"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnSave"
+            android:layout_marginTop="190dp"
+            android:layout_marginStart="140dp"
+            android:drawableLeft="@drawable/baseline_bookmark_24"
+            android:text="Theo dõi"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnUnSave"
+            android:layout_marginTop="190dp"
+            android:layout_marginStart="135dp"
+            android:drawableLeft="@drawable/baseline_bookmark_24"
+            android:text="Bỏ theo dõi"/>
+    </RelativeLayout>
+    <ListView
+        android:id="@+id/lsvListChap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ListView>
+</LinearLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="4dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="150dp">
+
+<!--        <ImageView-->
+<!--            android:id="@+id/ComicImage"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:scaleType="centerCrop"-->
+<!--            android:src="@drawable/voluyendinhphong" />-->
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/ComicImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/voluyendinhphong"
+            app:riv_corner_radius="10dp"
+            />
+
+        <TextView
+            android:id="@+id/tvChapterName"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:background="#A8000000"
+            android:gravity="center"
+            android:text="Chap 1000"
+            android:textColor="@color/white"
+            android:textSize="10dp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvComicName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Vo luyen dinh phong"
+        android:textColor="@color/black"
+        android:textSize="14dp" />
+
+
+</LinearLayout>
