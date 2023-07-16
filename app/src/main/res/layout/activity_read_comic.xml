@@ -37,4 +37,19 @@
         app:layout_constraintEnd_toStartOf="@+id/btnNextChap"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rlcReadComic" />
+
+    <TextView
+        android:id="@+id/txtChap"
+        android:layout_width="127dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnNextChap"
+        app:layout_constraintStart_toEndOf="@+id/btnPreChap"
+        app:layout_constraintTop_toBottomOf="@+id/rlcReadComic" />
 </androidx.constraintlayout.widget.ConstraintLayout>

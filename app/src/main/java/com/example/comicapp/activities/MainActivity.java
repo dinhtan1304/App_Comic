@@ -25,10 +25,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
-
     private GridView gdvDSComic;
     private ComicAdapter comicAdapter;
-
     private ArrayList<Comic> mListComic;
     private ArrayList<Comic> filterList = new ArrayList<>();
 
@@ -88,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextChange(String newText) {
                 filterList(newText);
-                return true;
+                return false;
             }
         });
         return super.onCreateOptionsMenu(menu);

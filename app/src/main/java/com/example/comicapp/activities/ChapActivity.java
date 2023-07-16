@@ -91,7 +91,6 @@ public class ChapActivity extends AppCompatActivity {
 
     private void listComicApi() {
         Toast.makeText(this, "Loading Chap...", Toast.LENGTH_SHORT).show();
-
         APIServices.getChapterApiEndPoint().getAllChapterById(idComic).enqueue(new Callback<ArrayList<Chapter>>() {
             @Override
             public void onResponse(Call<ArrayList<Chapter>> call, Response<ArrayList<Chapter>> response) {

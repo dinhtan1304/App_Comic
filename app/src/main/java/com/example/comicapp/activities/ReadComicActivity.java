@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.comicapp.API.APIServices;
@@ -25,8 +26,10 @@ public class ReadComicActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private Button btnPreChap;
     private Button btnNextChap;
+    private TextView txtChap;
     private ArrayList<ReadComic> arrUrlImg;
     private String idChap;
+    private String chapterName;
     private  String idNextChap;
     private  String idPreChap;
     private static Integer currentChapId;
@@ -40,6 +43,7 @@ public class ReadComicActivity extends AppCompatActivity {
 
     private void setUp() {
         idChap = chapter.getId();
+        chapterName = chapter.getChapterName();
         currentChapId = Integer.valueOf(idChap);
     }
 
@@ -47,14 +51,15 @@ public class ReadComicActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.rlcReadComic);
         btnPreChap = findViewById(R.id.btnPreChap);
         btnNextChap = findViewById(R.id.btnNextChap);
+        txtChap = findViewById(R.id.txtChap);
     }
     private void bindingAction(){
         btnPreChap.setOnClickListener(this::onClickPreChap);
         btnNextChap.setOnClickListener(this::onClickNextChap);
+        txtChap.setText(chapterName);
     }
 
     private void onClickNextChap(View view) {
-        Toast.makeText(this, "Loading Images", Toast.LENGTH_SHORT).show();
         currentChapId++;
         idNextChap = String.valueOf(currentChapId);
         APIServices.getReadComicApiEndPoint().getAllImgById(idNextChap).enqueue(new Callback<ArrayList<ReadComic>>() {
@@ -75,7 +80,6 @@ public class ReadComicActivity extends AppCompatActivity {
     }
 
     private void onClickPreChap(View view) {
-        Toast.makeText(this, "Loading Images", Toast.LENGTH_SHORT).show();
         currentChapId--;
         idPreChap = String.valueOf(currentChapId);
         APIServices.getReadComicApiEndPoint().getAllImgById(idPreChap).enqueue(new Callback<ArrayList<ReadComic>>() {
@@ -96,7 +100,6 @@ public class ReadComicActivity extends AppCompatActivity {
     }
 
     private void listImgApi() {
-        Toast.makeText(this, "Loading Images", Toast.LENGTH_SHORT).show();
         APIServices.getReadComicApiEndPoint().getAllImgById(idChap).enqueue(new Callback<ArrayList<ReadComic>>() {
             @Override
             public void onResponse(Call<ArrayList<ReadComic>> call, Response<ArrayList<ReadComic>> response) {
